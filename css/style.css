@@ -27,13 +27,14 @@ body{
     height: 150px;
     width: 150px;
     font-size: 40px;
-    border: 10px solid rgb(40, 53, 127);
+    border: 10px solid rgb(199, 125, 88);
     border-radius: 10%;
     color: rgb(0, 234, 51);
     user-select: none;
     font-family: 'Protest Guerrilla', sans-serif;
     font-size: 60px;
     cursor: pointer;
+    text-transform: capitalize;
 }
 .w{
     background: url('../images/tom1.png');
@@ -56,6 +57,10 @@ body{
 .l{
     background: url("../images/snare.png");
 }
+.pressed{
+    box-shadow: 0 3px 4px 0;
+    opacity: 0.5;
+}
 
 footer{
     /* margin-top: 10rem; */
@@ -74,6 +79,10 @@ footer{
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0 100px 0 100px;
+        margin-top: 0;
+    }
+    .container {
+        margin-bottom: 3rem;
     }
   }
   
@@ -86,6 +95,13 @@ footer{
         display: inline-flex;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 10px;
+        padding: 0 10px;
+    }
+    #title {
+        font-size: 70px;
+    }
+    .drum {
+        height: 120px;
+        width: 120px;
     }
   }

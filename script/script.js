@@ -6,11 +6,13 @@ for(let i = 0; i < document.querySelectorAll(".drum").length; i++){
 function handleClick(){
     let buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
 }
 
 // Detecting Keyboard Press
 addEventListener("keypress", function(e){
     makeSound(e.key);
+    buttonAnimation(e.key);
 });
 
 function makeSound(key){
@@ -32,12 +34,12 @@ function makeSound(key){
             tom4.play();
             break;
         case "j":
-            let snare = new Audio('../sounds/snare.mp3');
-            snare.play();
-            break;
-        case "k":
             let crash = new Audio('../sounds/crash.mp3');
             crash.play();
+            break;
+        case "k":
+            let snare = new Audio('../sounds/snare.mp3');
+            snare.play();
             break;
         case "l":
             let kick = new Audio('../sounds/kick-bass.mp3');
@@ -45,4 +47,11 @@ function makeSound(key){
             break;
         default:
     }
+}
+function buttonAnimation(currentKey){
+    let activeButton = document.querySelector("."+currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed")
+    }, 100);
 }
